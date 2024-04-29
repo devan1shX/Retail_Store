@@ -1,0 +1,587 @@
+
+﻿DATABASE SCHEMA AND INDEXES CREATION: 
+
+
+
+* Creating DATABASE: CREATE SCHEMA `dbms`;
+
+
+* Using DATABASE: USE dbms;
+
+
+* Creating user table: 
+
+
+CREATE TABLE user(
+
+        	cust_id INT PRIMARY KEY NOT NULL UNIQUE,
+            	fname VARCHAR(45) NOT NULL,
+           	mname VARCHAR(45) DEFAULT 'NA,'
+            	lnamme VARCHAR(45) DEFAULT 'NA' ,
+            	email VARCHAR(100) NOT NULL UNIQUE,
+           	pass VARCHAR(100) NOT NULL,
+		amount BIGINT,
+            	Street_num INT NOT NULL DEFAULT 'NA',
+            	Apt_num INT NOT NULL DEFAULT 'NA,'
+            	city VARCHAR(45) NOT NULL DEFAULT 'NA,'
+            	zip INT NOT NULL,
+            	state VARCHAR(15) NOT NULL DEFAULT 'NA,'
+	);
+
+
+* Inserting into user table: 
+
+
+INSERT INTO user (fname, mname, lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('anish', 'dewat', 'last_name', 'anishdev7050@gmail.com', 'Anish123@', 599, 3, 1988, 'Delhi', 110080, 'Delhi');
+
+
+INSERT INTO user (fname, mname, lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Mana', 'dewat', 'jp', '1138@gmail.com', 'pass@', 700, 3, 1988, 'Delhi', 110080, 'Delhi');
+
+
+INSERT INTO user (fname, mname, lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Mona', 'lisa', 'kapoor', 'mona@gmail.com', 'pass@', 800, 3, 1988, 'Delhi', 110080, 'Delhi');
+
+
+INSERT INTO user (fname, mname, lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Kaeena', 'Khan', 'kapoor', 'Kareena@gmail.com', 'pass@', 800, 3, 1988, 'Delhi', 111111, 'Delhi');
+
+
+INSERT INTO user (fname, lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Ranbir', 'kapoor', 'Ranbir@gmail.com', 'pass@', 8100000 ,3, 1988, 'Delhi', 111111, 'Delhi');
+
+
+INSERT INTO user (fname, mname ,lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Alia','Ranbir', 'kapoor', 'Alia@gmail.com', 'pass@', 8100000 ,3, 1988, 'Delhi', 111111, 'Delhi');
+
+
+INSERT INTO user (fname, mname ,lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Salman','Kapoor', 'khan', 'Salman@gmail.com', 'pass@23', 8100000 ,3, 198238, 'Delhi', 111111, 'Delhi');
+
+
+INSERT INTO user (fname, mname ,lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Shahrukh','Kapoor', 'khan', 'Shahrukh@gmail.com', 'pass@23', 8100000 ,3, 198238, 'Delhi', 111111, 'Delhi');
+
+
+INSERT INTO user (fname, mname , email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Shahid','Kapoor', 'Shahidgmail.com', 'pass@23', 81013320000 ,3, 198238, 'Delhi', 111111, 'Delhi');
+
+
+INSERT INTO user (fname, mname ,lname, email, pass, amount, Street_num, Apt_num, city, zip, state)
+VALUES ('Mira','Shahid', 'kapoor', 'Mira@gmail.com', 'pass@23', 8100000 ,3, 198238, 'Delhi', 111111, 'Delhi');
+
+
+
+
+
+
+* Creating admin table: 
+
+
+CREATE TABLE admin(
+
+    	admin_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    	fname VARCHAR(45) NOT NULL,
+    	mname VARCHAR(45) DEFAULT 'NA',
+    	lname VARCHAR(45) DEFAULT 'NA',
+    	email VARCHAR(100) NOT NULL UNIQUE,
+    	pass VARCHAR(100) NOT NULL,
+    	Street_num INT NOT NULL DEFAULT 0,
+    	Apt_num INT NOT NULL DEFAULT 0,
+    	city VARCHAR(45) NOT NULL DEFAULT 'NA',
+    	zip VARCHAR(45) NOT NULL,
+    	State VARCHAR(15) NOT NULL DEFAULT 'NA'
+
+	);
+
+
+
+
+* Inserting into admin table: 
+
+
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Ram','Kumar','Mohan','ramMohan@gmail.com','123456',1988,3,'delhi', 110080,'DELHI');
+
+
+INSERT INTO admin (fname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Manhor','LAL','ManoharLal@gmail.com','123456',19,5,'delhi', 1100,'DELHI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Shri','Mukesh','Chauhan','MukeshCh@gmail.com','pass123',1977,5,'delhi', 110062,'DELHI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Shrimati','Poonam','Devi','DeviPoonam@gmail.com','123456',1988,3,'delhi', 110080,'MUMBAI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Mr.','Maniram','Singh','ManiramSibth@gmail.com','123456',1988,3,'Mumbai', 110011,'DELHI');
+
+
+INSERT INTO admin (fname, mname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Ravi','Prasad','raviPrasadgmail.com','123456',1988,3,'delhi', 110080,'DELHI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Ashok','Kumar','Jhamb','AshokJh@gmail.com','123456',1988,3,'delhi', 110080,'DELHI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Bala','Ravi','Kumari','BalaKumari@gmail.com','123456',1988,3,'delhi', 110080,'DELHI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Manohar','Mistri','Sukumar','manoharMistri@gmail.com','123456',1988,3,'delhi', 110080,'DELHI');
+
+
+INSERT INTO admin (fname, mname, lname, email, pass, Street_num, Apt_num, city, zip, state)
+VALUES ( 'Ravi','Kumar','Prasad','raviPrasad@gmail.com','RaviPrasad123@',1988,3,'Bihar', 110080,'Bihar');
+
+
+
+* Creating user_Mobile table:  
+
+
+CREATE TABLE user_Mobile (
+
+    	mobile VARCHAR(10) NOT NULL UNIQUE PRIMARY KEY,
+    	cust_id INT,
+    	FOREIGN KEY (cust_id) REFERENCES user (cust_id) ON DELETE CASCADE
+
+	);
+
+
+
+* Inserting into user_Mobile table:
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('1234567891',1);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('8383748738',1);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('2345678911',2);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('3456789121',3);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('456789123',4);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('567891234',5);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('678912345',6);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('789123456',7);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('891234567',8);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('912345678',9);
+
+
+INSERT INTO user_Mobile (mobile,cust_id)
+VALUES ('1123456788',10);
+
+
+
+
+* Creating admin_Mobile table:  
+
+
+CREATE TABLE admin_Mobile (
+
+    	mobile VARCHAR(10) NOT NULL UNIQUE PRIMARY KEY,
+    	admin_id INT,
+    	FOREIGN KEY (admin_id) REFERENCES admin(admin_id) ON DELETE CASCADE
+
+);
+
+
+
+* Inserting into admin_Mobile table:
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (1,'1122334455');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (1,'2233445511');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (2,'4455112233');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (3,'5511223344');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (4,'1133224455');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (5,'5566778899');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (6,'6677889955');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (7,'7788995566');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (8,'8899556677');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (9,'9955667788');
+
+
+INSERT INTO admin_Mobile (admin_id, mobile)
+VALUES (10,'2244668811');
+
+
+* Creating payment table:  
+
+
+CREATE TABLE payment (
+
+    	cust_id INT,
+    	admin_id INT,
+    	payment_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    	amount INT,
+    	FOREIGN KEY (cust_id) REFERENCES user(cust_id) ON DELETE CASCADE,
+    	FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
+);
+
+
+* Inserting into payment table:
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (1,1,500);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (2,1,5000);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (1,3,3500);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (3,3,3500);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES(5,3,350000);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (3,3,3500);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (1,8,001);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (10,3,3500);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (7,66,25);
+
+
+INSERT INTO payment (cust_id, admin_id, amount)
+VALUES (7,6,2125);
+
+
+
+
+
+* Creating payment_Method table:
+
+
+CREATE TABLE payment_Method (
+
+    	payment_id INT,
+    	FOREIGN KEY (payment_id) REFERENCES payment (payment_id) ON DELETE CASCADE,
+    	method VARCHAR(20)
+
+);
+
+
+
+
+* Inserting into payment_Method table:
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (1,"PhonePay");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (2,"PayTM");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (3,"COD");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (4,"GooglePay");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (5,"NEFT");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (6,"PhonePay");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (7,"PhonePay");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (7,"GPay");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (8,"PhonePay");
+
+
+INSERT INTO payment_method(payment_id, method)
+VALUES (9,"COD");
+
+
+
+
+* Creating item table:
+
+
+CREATE TABLE item (
+
+    	item_id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+    	admin_id INT,
+    	cust_id INT DEFAULT NULL,
+    	amount BIGINT,
+    	quantity BIGINT,
+    	review VARCHAR(255) DEFAULT NULL,
+    	FOREIGN KEY (admin_id) REFERENCES admin (admin_id) ON DELETE CASCADE,
+    	FOREIGN KEY (cust_id) REFERENCES user (cust_id)
+
+	);
+
+
+
+* Inserting into item table:
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (1,500,50,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (1,5100,500,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (3,50,520,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (3,111500,2150,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (4,534500,1350,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (5,52300,50232,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (6,51200,1350,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (7,123500,50,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (8,12500,1250,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (9,51200,150,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (10,500,50,"VERY GOOD PRODUCT");
+
+
+INSERT INTO item(admin_id,amount,quantity,review)
+VALUES (4,50110,150,"VERY GOOD PRODUCT");
+
+
+
+
+
+
+* Creating delivery table:
+
+
+CREATE TABLE delivery (
+
+    	delivery_id INT PRIMARY KEY AUTO_INCREMENT,
+    	cust_id INT,
+    	admin_id INT,
+    	item_id INT,
+    	payment_id INT,
+    	total_amount BIGINT,
+    	quantity INT,
+    	delivery_status VARCHAR(20),
+    	delivery_date DATE,
+    	FOREIGN KEY (cust_id) REFERENCES user (cust_id),
+    	FOREIGN KEY (admin_id) REFERENCES admin (admin_id),
+    	FOREIGN KEY (payment_id) REFERENCES payment (payment_id),
+    	FOREIGN KEY (item_id) REFERENCES item (item_id)
+
+	);
+
+
+
+
+* Inserting into delivery table:
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (1, 2, 5, 1, 5000, 50, 'ON THE WAY', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (2, 1, 4, 5 ,  50000, 50, 'Delivered', '2024-05-12');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (5, 1, 4, 1, 5000, 50, 'Delivered', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (4, 3, 1, 1, 5000, 50, 'Delivered', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (4, 3, 1, 1, 5000, 50, 'ON WAY', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (5, 2, 1, 1, 5000, 50, 'ON WAY', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (7, 1, 1, 1, 5000, 50, 'ON WAY', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (5, 2, 6, 1, 5000, 50, 'Delivered', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (9, 3, 2, 1, 5000, 50, 'Delivered', '2024-02-10');
+
+
+INSERT INTO delivery (cust_id, admin_id, item_id, payment_id, total_amount, quantity, delivery_status, delivery_date)
+VALUES (3, 1, 3, 1, 5000, 50, 'ON THE WAY', '2024-02-10');
+
+
+
+
+
+
+* Creating cart table:
+
+
+CREATE TABLE cart (
+
+    	cust_id INT,
+    	FOREIGN KEY (cust_id) REFERENCES user (cust_id) ON DELETE CASCADE,
+    	total_price BIGINT,
+    	total_items BIGINT
+
+	);
+
+
+* Inserting into cart table:
+
+
+INSERT INTO cart (cust_id, total_price, total_items)        
+VALUES(1,122,12);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)       
+VALUES(2,12,1);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)       
+VALUES(3,12201,121);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)      
+VALUES(4,11010,120);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)          
+VALUES(5,122,12);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)      
+VALUES(6,110080,120);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)        
+VALUES(7,12212,125);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)     
+VALUES(8,12200,121);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)         
+VALUES(9,12,1);
+
+
+INSERT INTO cart (cust_id, total_price, total_items)    
+VALUES(10,200,5);
+2022075.txt
+Displaying 2022075.txt.
